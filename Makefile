@@ -11,3 +11,6 @@ t:
 	mkdir -p t/p5
 	perl t/cpanm -l t/p5 --installdeps ./t
 	prove t/
+
+deploy:
+	appcfg.py --oauth2 update .
