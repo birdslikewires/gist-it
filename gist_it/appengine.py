@@ -4,7 +4,7 @@ import os
 import cgi
 import sys
 import urllib
-import simplejson
+import json
 
 jinja2 = None
 
@@ -127,7 +127,7 @@ def dispatch_gist_it( dispatch, location ):
                 if test:
                     if test == 'json':
                         dispatch.response.headers['Content-Type'] = 'application/json';
-                        dispatch.response.out.write(simplejson.dumps({
+                        dispatch.response.out.write(json.dumps({
                             'gist': gist.value(),
                             'content': gist_content,
                             'html': gist_html,
